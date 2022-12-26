@@ -1,4 +1,4 @@
-package com.teamlab.skillup.todo;
+package com.teamlab.skillup.todo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
