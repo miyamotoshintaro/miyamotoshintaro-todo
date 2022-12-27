@@ -34,4 +34,13 @@ public class TodoService {
     public void saveTodo(TodoForm todoForm) {
         todoRepository.save(Todo.of(todoForm));
     }
+
+    /**
+     * Todo情報を部分一致で検索する
+     *
+     * @return Todo情報
+     */
+    public List<Todo> searchTodoContaining(String title) {
+        return todoRepository.findByTitleContainingOrderByCreateTime(title);
+    }
 }

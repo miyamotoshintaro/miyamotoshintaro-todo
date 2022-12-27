@@ -24,6 +24,17 @@ public class TodoController {
         return "index";
     }
 
+    @GetMapping("/search")
+    public String search() {
+        return "search";
+    }
+
+    @GetMapping("/search/result")
+    public String searchResult(String title, Model model) {
+        model.addAttribute("todoList", todoService.searchTodoContaining(title));
+        return "result";
+    }
+
     /**
      * TODO登録処理
      * @param todoForm 入力値
